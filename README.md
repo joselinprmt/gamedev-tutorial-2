@@ -6,6 +6,8 @@ Saat run project pertama kali, tercetak output **"Platform initialized"**, yang 
 
 ## Coba gerakkan landasan ke batas area bawah, lalu gerakkan kembali ke atas hingga hampir menyentuh batas atas. Apa saja pesan log yang dicetak pada panel Output?
 
+![Screenshot 2025-02-20 225253](https://github.com/user-attachments/assets/e935a9cc-37c3-405d-a211-7e1eb4b2630d)
+
 Ketika landasan digerakkan ke batas area bawah, tidak keluar pesan log apapun pada panel output. Namun, ketika landasan digerakkan kembali ke atas hingga hampir menyentuh batas atas, tercetak output **"Reached objective!"**.
 
 ## Buka scene MainLevel dengan tampilan workspace 2D. Apakah lokasi scene ObjectiveArea memiliki kaitan dengan pesan log yang dicetak pada panel Output pada percobaan sebelumnya?
@@ -17,6 +19,8 @@ Pada tampilan workspace 2D, terlihat bahwa lokasi scene ObjectiveArea beserta Co
 # Latihan: Memanipulasi Node dan Scene
 
 ## Scene BlueShip dan StonePlatform sama-sama memiliki sebuah child node bertipe Sprite. Apa fungsi dari node bertipe Sprite?
+
+![Screenshot 2025-02-20 220359](https://github.com/user-attachments/assets/c5a2f447-be98-438a-9e33-2b46e25bb271)
 
 Node bertipe Sprite adalah node yang menampilkan texture atau representasi visual dari objek di dalam game. Berdasarkan Godot [docs](https://docs.godotengine.org/en/stable/classes/class_sprite2d.html), Sprite2D menampilkan 2D texture, yang dapat berupa region dari atlas texture yang lebih besar, atau frame dari sprite sheet animation.
 
@@ -33,6 +37,8 @@ Saya mencoba mengganti nilai mass menjadi 0.001 kg dan 1000 kg, namun, **tidak t
 Namun, jika saya mencoba mengganti gravity scale menjadi 10, terlihat bahwa BlueShip sangat cepat jatuh hingga cenderung menempel dengan StonePlatform.
 
 ## Ubah nilai atribut Disabled pada tipe CollisionShape2D di scene StonePlatform, lalu coba jalankan scene MainLevel. Apa yang terjadi?
+
+![Screenshot 2025-02-20 224949](https://github.com/user-attachments/assets/1479e49b-9d0a-46c5-a91d-ac367befae20)
 
 Ketika diinisialisasi, StonePlatform akan dilewati oleh BlueShip, dan BlueShip akan jatuh ke bawah.
 
