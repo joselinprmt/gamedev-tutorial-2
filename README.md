@@ -1,3 +1,7 @@
+# Tutorial 2: Introduction to Game Engine 🎮
+
+![image](https://github.com/user-attachments/assets/df2c0da0-a30f-422b-a469-69f677aafd8b)
+
 # Latihan: Playtest
 
 ## Apa saja pesan log yang dicetak pada panel Output?
