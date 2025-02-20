@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://djwd8wd2ilw36"]
+
+[ext_resource type="Script" path="res://scenes/PlatformGray.gd" id="1_mnqh0"]
+[ext_resource type="PackedScene" uid="uid://5wlvt0orewtc" path="res://scenes/SnowPlatform.tscn" id="2_oi207"]
+[ext_resource type="PackedScene" uid="uid://ixhmd5qlkwe6" path="res://scenes/GreenShip.tscn" id="3_5nsxf"]
+[ext_resource type="Script" path="res://scenes/ObjectiveArea.gd" id="4_3m71k"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(138.75, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r78ld"]
+size = Vector2(141, 71.5)
+
+[node name="LastLevel" type="Node"]
+
+[node name="ObjectiveArea" type="Area2D" parent="."]
+script = ExtResource("4_3m71k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
+position = Vector2(1083, 457)
+shape = SubResource("1")
+debug_color = Color(0.196078, 0.556863, 0.862745, 0.631373)
+
+[node name="Polygon2D" type="Polygon2D" parent="ObjectiveArea"]
+position = Vector2(1013, 419)
+color = Color(0.607705, 0.647235, 0.625033, 0.25098)
+polygon = PackedVector2Array(0, -1, 0, -1, 34.9291, -1, 141, -1, 141, 80, 0, 80, 0, 80)
+
+[node name="Label" type="Label" parent="ObjectiveArea/Polygon2D"]
+offset_left = 16.0
+offset_top = 29.0
+offset_right = 134.0
+offset_bottom = 52.0
+text = "Finish Here! ⛳"
+metadata/_edit_use_anchors_ = true
+
+[node name="GreenShip" parent="." instance=ExtResource("3_5nsxf")]
+position = Vector2(493, 374)
+
+[node name="PlatformGray" type="CharacterBody2D" parent="."]
+script = ExtResource("1_mnqh0")
+
+[node name="SnowPlatform" parent="PlatformGray" instance=ExtResource("2_oi207")]
+position = Vector2(462, 548)
+
+[node name="SnowPlatform2" parent="PlatformGray" instance=ExtResource("2_oi207")]
+position = Vector2(532, 548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformGray"]
+position = Vector2(497, 547.25)
+shape = SubResource("RectangleShape2D_r78ld")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Node2D" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+offset_left = 450.0
+offset_top = 244.0
+offset_right = 695.0
+offset_bottom = 342.0
+color = Color(0.578779, 0.982522, 0.751112, 0.498039)
+
+[node name="Congratulations" type="Label" parent="CanvasLayer/Control"]
+offset_left = 450.0
+offset_top = 268.0
+offset_right = 696.0
+offset_bottom = 291.0
+text = "Congratulations!"
+horizontal_alignment = 1
+
+[node name="You Win" type="Label" parent="CanvasLayer/Control"]
+offset_left = 455.0
+offset_top = 295.0
+offset_right = 694.0
+offset_bottom = 318.0
+text = "YOU WIN ❤️"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
